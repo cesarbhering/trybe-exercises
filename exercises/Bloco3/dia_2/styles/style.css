@@ -1,0 +1,43 @@
+h1 {
+    size: 60px;
+    color: orange;
+    font-family: sans-serif;
+    font-style: italic;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+body {
+    font-size: 16px;
+}
+
+li {
+    line-height: 40px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+
+.MudaFundo {
+    background-color: palegreen
+}
+
+
+ul {
+    background-color: orchid;
+}
+
+#Vermelho{
+    background-color: red;
+}
+
+#Amarelo {
+    background-color: yellow;
+}
+
+#Marrom {
+    background-color: saddlebrown;
+}
