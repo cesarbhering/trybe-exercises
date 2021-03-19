@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+li:hover {
+    background-color: gray;
+}
+
+li:active {
+    font-family: monospace;
+}
+
+ol, ul {
+    list-style: none;
+}
+

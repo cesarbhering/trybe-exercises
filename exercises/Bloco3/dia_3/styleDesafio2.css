@@ -1,0 +1,19 @@
+.super-mario {
+    margin-right: 50px;
+}
+
+.baloon {
+    float: left;
+    margin-right: 50px;
+}
+
+.word {
+    position: relative;
+    top: 95px;
+    left: 50px;
+    margin-right: 50px;
+}
+
+.goomba {
+    margin: 50px;
+}
