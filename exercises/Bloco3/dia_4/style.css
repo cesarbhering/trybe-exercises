@@ -3,7 +3,8 @@ header {
     display: block;
     width: 100%;
     position: fixed;
-    background-color: aquamarine;
+    background-color: sandybrown;
+    color: azure;
     top: 0;
     left: 0;
 }
