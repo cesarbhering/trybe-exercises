@@ -19,13 +19,13 @@ console.log(checkPalindrome('arara'));
 teste = [2, 3, 6, 7, 10, 1];
 
 function higherValue(numbers) {
-  highestValue = 0;
+  highestValue = numbers[0];
   for (let num of numbers){
     if (num > highestValue) {
       highestValue = num;
     }
   }
-  return highestValue;
+  return numbers.indexOf(highestValue);
 }
 
 console.log(higherValue(teste));
