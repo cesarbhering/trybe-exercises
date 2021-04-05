@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .cursive-text {
+      font-family: monospace;
+      height: 50px;
+    }
+  </style>
+  <body>
+    <h2 id="page-title">Título</h2>
+    <p class="cursive-text" id="paragraph">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p class="cursive-text" id="second-paragraph">Segundo parágrafo!</p>
+
+    <script>
+      var paragraph = document.querySelector("#paragraph");
+      paragraph.style.color = "red";
+      var title = document.querySelector("#page-title");
+      title.innerText = "Circulo de Fogo";
+      var secondParagraph = document.querySelector("#second-paragraph");
+      secondParagraph.innerText = "Primeiros testes com DOM e seletores.";
+      var subtitle = document.querySelector("#subtitle");
+      subtitle.innerText = "Alterando o texto do subtitulo.";
+      var classCursiveText = document.querySelectorAll(".cursive-text");
+      classCursiveText[0].style.color = "blue";
+      var subTitleTag = document.querySelectorAll("h4");
+      subTitleTag[0].innerText = "Alterando o texto do subtitulo novamente.";
+    </script>
+  </body>
+</html>
