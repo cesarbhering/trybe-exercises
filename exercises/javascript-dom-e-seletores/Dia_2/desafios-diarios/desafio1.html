@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id="paiDoPai">
+  <div id="pai">
+    <div id="primeiroFilho"></div>
+    <div id="elementoOndeVoceEsta">
+      <div id="primeiroFilhoDoFilho"></div>
+      <div id="segundoEUltimoFilhoDoFilho"></div>
+    </div>
+    Atenção!
+    <div id="terceiroFilho"></div>
+    <div id="quartoEUltimoFilho"></div>
+  </div>
+</div>
+<script>
+  //Acesse o elemento elementoOndeVoceEsta .
+  //Acesse o primeiroFilhoDoFilho e adicione um texto a ele.
+  let ondeVoceEstaPai = document.getElementById('elementoOndeVoceEsta').parentNode;
+  ondeVoceEstaPai.style.background = "red";
+  //Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+  let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+  primeiroFilhoDoFilho.innerText = 'Lorem Ipsum e texto solicitado.';
+  //Acesse o primeiroFilho a partir de pai.
+  let primeiroFilho1 = document.getElementById('pai').firstElementChild;
+  //Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta .
+  let primeiroFilho2 = document.getElementById('elementoOndeVoceEsta').previousElementSibling;
+  //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta .
+  let atencao = document.getElementById('terceiroFilho').previousSibling;
+  //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta .
+  let terceiroFilho = document.getElementById('elementoOndeVoceEsta').nextElementSibling;
+  //Agora acesse o terceiroFilho a partir de pai .
+  let terceiroFilho2 = document.getElementById('pai').lastElementChild.previousElementSibling;
+  //Crie um irmão para elementoOndeVoceEsta .
+  let divPai = document.querySelector('#pai');
+  newDiv = document.createElement('div');
+  newDiv.innerText = 'Testando Criação de nova div, irmã da div elementoOndeVoceEsta';
+  divPai.appendChild(newDiv);
+  //Crie um filho para elementoOndeVoceEsta.
+  let divPai2 = document.querySelector('#elementoOndeVoceEsta');
+  newDIv2 = document.createElement('div');
+  newDIv2.innerText = 'Testando Criação de nova div, filha da div elementoOndeVoceEsta';
+  newDIv2.setAttribute('id', 'testeid');
+  divPai2.appendChild(newDIv2);
+  //Crie um filho para primeiroFilhoDoFilho 
+  let divPai3 = document.querySelector('#primeiroFilhoDoFilho');
+  newDIv3 = document.createElement('div');
+  newDIv3.innerText = 'Testando Criação de nova div, filha da div primeiroFilhoDoFilho';
+  newDIv3.setAttribute('id', 'filhaprimeiroFilhoDoFilho');
+  divPai3.appendChild(newDIv3); 
+  //A partir desse filho criado, acesse terceiroFilho.
+  let terceiroFilho3 = document.querySelector('#filhaprimeiroFilhoDoFilho').parentElement.parentElement.nextElementSibling;
+  //Remova todos os elementos da página, menos pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+  primeiroFilho1.remove();
+  terceiroFilho.remove();
+  newDIv2.remove();
+  newDIv3.remove();
+  atencao.remove();
+  document.getElementById('elementoOndeVoceEsta').removeChild(document.getElementById('segundoEUltimoFilhoDoFilho'));
+  document.getElementById('pai').removeChild(document.getElementById('quartoEUltimoFilho'));
+  document.getElementById('pai').removeChild(lastChild);
+  // falta remover alguns elementos.
+</script>
+</body>
+</html>
