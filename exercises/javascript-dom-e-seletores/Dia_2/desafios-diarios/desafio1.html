@@ -36,8 +36,26 @@
   //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta .
   let terceiroFilho = document.getElementById('elementoOndeVoceEsta').nextElementSibling;
   //Agora acesse o terceiroFilho a partir de pai .
-  let terceiroFilho2 = document.getElementById('pai').lastChild;
-  
+  let terceiroFilho2 = document.getElementById('pai').lastElementChild.previousElementSibling;
+  //Crie um irmão para elementoOndeVoceEsta .
+  let divPai = document.querySelector('#pai');
+  newDiv = document.createElement('div');
+  newDiv.innerText = 'Testando Criação de nova div, irmã da div elementoOndeVoceEsta';
+  divPai.appendChild(newDiv);
+  //Crie um filho para elementoOndeVoceEsta.
+  let divPai2 = document.querySelector('#elementoOndeVoceEsta');
+  newDIv2 = document.createElement('div');
+  newDIv2.innerText = 'Testando Criação de nova div, filha da div elementoOndeVoceEsta';
+  newDIv2.setAttribute('id', 'testeid');
+  divPai2.appendChild(newDIv2);
+  //Crie um filho para primeiroFilhoDoFilho 
+  let divPai3 = document.querySelector('#primeiroFilhoDoFilho');
+  newDIv3 = document.createElement('div');
+  newDIv3.innerText = 'Testando Criação de nova div, filha da div primeiroFilhoDoFilho';
+  newDIv3.setAttribute('id', 'filhaprimeiroFilhoDoFilho');
+  divPai3.appendChild(newDIv3); 
+  //A partir desse filho criado, acesse terceiroFilho.
+  let terceiroFilho3 = document.querySelector('#filhaprimeiroFilhoDoFilho').parentElement.parentElement.nextElementSibling;
 </script>
 </body>
 </html>
