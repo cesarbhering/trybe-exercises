@@ -67,9 +67,9 @@
       divFirst.setAttribute('class', 'main-content');
       document.body.appendChild(divFirst);
 
-      //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2.
       let divChild = document.createElement('div');
-      divChild.setAttribute('class', 'center content');
+      divChild.setAttribute('class', 'center-content');
       divFirst.appendChild(divChild);
 
       //Adicione a tag p como filho do div criado no passo 3 e coloque algum texto.
@@ -77,10 +77,43 @@
       pFirst.innerText = "Realizando o exercício do bloco 05 dia 02.";
       divChild.appendChild(pFirst);
 
-      //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2..
-      let pSecond = document.createElement('div');
-      pSecond.setAttribute('class', 'left-content');
-      divFirst.appendChild(pSecond);
+      //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2.
+      let divSecond = document.createElement('div');
+      divSecond.setAttribute('class', 'left-content');
+      divFirst.appendChild(divSecond);
+
+      //Adicione a tag div com a classe right-content como filho da tag div criada no passo 2.
+      divThird = document.createElement('div');
+      divThird.setAttribute('class', 'right-content');
+      divFirst.appendChild(divThird);
+
+      //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5.
+      imgFirst = document.createElement('img');
+      imgFirst.setAttribute('src', 'https://picsum.photos/200');
+      imgFirst.setAttribute('class', 'small-image');
+      divSecond.appendChild(imgFirst);
+
+      //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let ulFirst = document.createElement('ul');
+      divThird.appendChild(ulFirst);
+
+      let listNums = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+  
+      for (let index = 0; index < listNums.length; index += 1) {
+        let element = document.createElement('li');
+        element.innerText= listNums[index];
+        ulFirst.appendChild(element);
+      }
+
+      for (let index = 0; index < 3; index +=1) {
+        let elementH3 = document.createElement('h3');
+        divFirst.appendChild(elementH3);
+        
+      }
+
+
+
 
     </script>
   </body>
