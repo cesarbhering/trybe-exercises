@@ -56,6 +56,13 @@
   divPai3.appendChild(newDIv3); 
   //A partir desse filho criado, acesse terceiroFilho.
   let terceiroFilho3 = document.querySelector('#filhaprimeiroFilhoDoFilho').parentElement.parentElement.nextElementSibling;
+  //Remova todos os elementos da página, menos pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+  primeiroFilho1.remove();
+  terceiroFilho.remove();
+  newDIv2.remove();
+  newDIv3.remove();
+  atencao.remove();
+  // falta remover alguns elementos.
 </script>
 </body>
 </html>
