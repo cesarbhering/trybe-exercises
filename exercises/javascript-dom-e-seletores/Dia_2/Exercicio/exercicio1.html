@@ -60,6 +60,7 @@
       //Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body.
       let h1First = document.createElement('h1');
       h1First.innerText = 'Exercício 5.2 - JavaScript DOM';
+      h1First.setAttribute('class', 'title');
       document.body.appendChild(h1First);
 
       //Adicione a tag div com a classe main-content como filho da tag body.
@@ -108,13 +109,30 @@
 
       for (let index = 0; index < 3; index +=1) {
         let elementH3 = document.createElement('h3');
+        elementH3.setAttribute('class', 'description');
         divFirst.appendChild(elementH3);
         
       }
 
+      //Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+      let mainContent = document.querySelector('.main-content');
+      let leftContent = document.querySelector('.left-content');
+      mainContent.removeChild(leftContent);
 
 
+      //Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div ;
+      let divStep6 = document.querySelector('.right-content');
+      console.log(divStep6)
+      divStep6.style.marginRight = "auto";
 
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+      divFirst.style.background = "green";
+
+      //Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+      console.log(ulFirst);
+      for (let index = 0; index < 2; index += 1) {
+        ulFirst.removeChild(ulFirst.lastElementChild);
+      }
     </script>
   </body>
 </html>
