@@ -206,3 +206,13 @@ function addTask(string) {
 
 let inputButton = document.getElementById('btn-add');
 inputButton.addEventListener('click', addTask);
+
+function addTaskUsingEnter(event) {
+  let keyEnter = event.keyCode;
+  if (keyEnter == '13') {
+    let newTask = addTask();
+  }
+}
+
+let inputBox = document.getElementById('task-input');
+inputBox.addEventListener('keypress', addTaskUsingEnter);
