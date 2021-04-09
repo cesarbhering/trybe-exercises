@@ -8,26 +8,18 @@ let bodyContentStyle = getComputedStyle(document.querySelector('#pageText'));
 let body = document.querySelector('#pageText');
 let btnDark = document.querySelector('.btn-dark');
 
-function checkDarkPreference() {
-  if (localStorage.getItem('fontSize') == '16px') {
-    body.style.backgroundColor = 'black';
-    body.style.color = 'gray';
-    body.style.fontSize = '16px';
-    body.style.lineHeight = '110%';
-    body.style.fontFamily = 'monospace';
-    btnDark.innerText = 'Light Mode';
-  }
-}
-
-checkDarkPreference();
+body.style.backgroundColor = localStorage.getItem('backgroundColor');
+body.style.color = localStorage.getItem('color');
+body.style.fontSize = localStorage.getItem('fontSize');
+body.style.lineHeight = localStorage.getItem('lineHeight');
+body.style.fontFamily = localStorage.getItem('fontFamily');
 
 function createStoragesCSS() {  // Cria o localstorage caso não exista, com as propriedades que estão carregadas no CSS.
-    localStorage.setItem('backgroundColor', bodyContentStyle.backgroundColor);
-    localStorage.setItem('color', bodyContentStyle.color);
-    localStorage.setItem('fontSize', bodyContentStyle.fontSize);
-    localStorage.setItem('lineHeight', bodyContentStyle.lineHeight);
-    localStorage.setItem('fontFamily', bodyContentStyle.fontFamily);
-
+  localStorage.setItem('backgroundColor', bodyContentStyle.backgroundColor);
+  localStorage.setItem('color', bodyContentStyle.color);
+  localStorage.setItem('fontSize', bodyContentStyle.fontSize);
+  localStorage.setItem('lineHeight', bodyContentStyle.lineHeight);
+  localStorage.setItem('fontFamily', bodyContentStyle.fontFamily);
 }
 
 //createStoragesCSS();
@@ -39,7 +31,6 @@ function changeCSSAtributes() { //muda os atributos ao clicar no botao
     body.style.fontSize = '16px';
     body.style.lineHeight = '110%';
     body.style.fontFamily = 'monospace';
-    btnDark.innerText = 'Light Mode';
     createStoragesCSS();
   } else {
     body.style.backgroundColor = 'antiquewhite';
