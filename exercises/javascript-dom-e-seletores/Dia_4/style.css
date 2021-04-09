@@ -1,0 +1,12 @@
+#pageText {
+  background-color:antiquewhite;
+  color: hsl(200, 50%, 50%);
+  font-size: medium;
+  line-height: normal;
+  font-family:'Times New Roman';
+}
+
+button {
+  position: fixed;
+  top: 70%;
+} 
