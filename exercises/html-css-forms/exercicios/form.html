@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form action="" method="GET" id='userInfo'>
+    <fieldset class="userPersonalInfo">
+      <legend>Dados Pessoais</legend>
+      <label for="userName">Nome Completo:</label>
+      <input type="text" placeholder="Digite seu nome" maxlength="40" name="personalnam e" id="userName" autofocus required>
+      <br>
+      <label for="userMail">E-mail:</label>
+      <input type="email" placeholder="Digite seu email" maxlength="50" name="personalmail" id="userMail" required>
+      <br>
+      <label for="userCPF">CPF:</label>
+      <input type="text" placeholder="Digite seu CPF" maxlength="11" name="personalCPF" id="userCPF" required>
+      <br>
+      <label for="userAddress">Endereço:</label>
+      <input type="text" placeholder="Digite seu endereço" maxlength="200" name="personalAddress" id="userAddress" required>
+      <br>
+      <label for="userCity">Cidade:</label>
+      <input type="text" placeholder="Digite sua cidade" maxlength="28" name="personalCity" id="userCity" required>
+      <label for="userState">Estado:</label>
+      <select name="personalState" id="userState">
+      </select>
+      <br>
+      <span>Tipo de Moradia:</span>
+      <label for="house">Casa
+        <input type="radio" name="userHousingType" value="Casa" id="house" required>
+      </label>
+      <label for="apartament">Apartamento
+        <input type="radio" name="userHousingType" value="Apartamento" id="apartament" required>
+      </label>
+    </fieldset>
+    <fieldset class="userProfessionalInfo">
+      <legend>Dados Profissionais</legend>
+      <label for="userPosition">Cargo:</label>
+      <input type="text" maxlength="40" id='userPosition' required>
+      <br>
+      <label for="userPositionResume">Descrição do cargo:</label>
+      <input type="text" maxlength="500" id="userPositionResume" required>
+      <br>
+      <label for="userPositionInitialDate">Data de início:</label>
+      <input type="text" maxlength="10" id="userPositionInitialDate" required>
+      <br>
+      <label for="userCvResume">Resumo do currículo:</label>
+      <textarea maxlength="1000" id="userCvResume" required></textarea>
+    </fieldset> 
+    <div class='btnSpace'>
+      <button type="submit" id="submitData">Enviar Dados</button>
+      <button type="reset" id="clearData">Limpar Campos</button>
+    </div>
+  </form>
+  <fieldset id='compiledCV'>
+    <legend>CV Renderizado</legend>
+  </fieldset>
+</body>
+<script src="script.js"></script>
+</html>
