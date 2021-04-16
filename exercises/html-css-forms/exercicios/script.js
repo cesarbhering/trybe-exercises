@@ -43,6 +43,9 @@ function constructCV () { // Faz construção do CV.
   const userAnswers = document.getElementById('userInfo');
   const constructedCV = document.getElementById('compiledCV');
   for (let index = 0; index < userAnswers.length; index += 1) {
+    if (userAnswers[index].type === 'radio' && !userAnswers[index].checked) {
+      continue;
+    }
     if (userAnswers[index].value !== undefined) {
       let addInfo = document.createElement('p');
       addInfo.innerText = userAnswers[index].value;
@@ -81,6 +84,9 @@ function clearData(event){ // Limpa o formulário e o CV criado.
   const userAnswers = document.getElementById('userInfo');
   constructedCV.innerHTML = '';
   for (let index = 0; index < userAnswers.length; index += 1) {
+    if (userAnswers[index].type === 'radio') {
+      continue;
+    }
     userAnswers[index].value = ''
   }
   const createLegend = document.createElement('legend');
