@@ -1,3 +1,5 @@
+new window.JustValidate('.js-form');
+
 statesList = [
   { name: 'Acre', acronym: 'AC',},
   { name: 'Alagoas', acronym: 'AL',},
@@ -39,7 +41,8 @@ function createStatesOptions() { //Cria a lista de estados.
 }
 createStatesOptions();
 
-function constructCV () { // Faz construção do CV.
+function constructCV (event) { // Faz construção do CV.
+  event.preventDefault();
   const userAnswers = document.getElementById('userInfo');
   const constructedCV = document.getElementById('compiledCV');
   for (let index = 0; index < userAnswers.length; index += 1) {
@@ -54,27 +57,6 @@ function constructCV () { // Faz construção do CV.
     }
   }
 }
-
-// function checkDate(event) { // Verifica Integraidade da Data fornecida.
-//   event.preventDefault();
-//   let date = document.getElementById('userPositionInitialDate').value;
-//   date = date.split('');
-//   let days = parseInt(date.slice(0,2).join(''));
-//   let month = parseInt(date.slice(3,5).join(''));
-//   let year = parseInt(date.slice(6,10).join(''));
-//   if (days < 1 || days > 31 || isNaN(days)) {
-//     return alert('ERRO: Dia inválido');
-//   } else if (date[2] !== "/") { 
-//       return alert('ERRO: Barra depois de dias inválida');
-//   } else if (month < 1 || month > 12 || isNaN(month)) {
-//     return alert('ERRO: Mês inválido');
-//   } else if (date[5] !== "/") {
-//     return alert('ERRO: Barra depois de mes inválida');
-//   }else if (year < 1960 || year > 2021 || isNaN(year)) {
-//     return alert('ERRO: Ano inválido')
-//   }
-//   constructCV();
-// }
 
 const btnSendData = document.getElementById('submitData');
 btnSendData.addEventListener('click', constructCV);
@@ -92,6 +74,7 @@ function clearData(event){ // Limpa o formulário e o CV criado.
   }
   const createLegend = document.createElement('legend');
   createLegend.innerText = 'CV Renderizado';
+  createLegend.setAttribute('class', 'col-form-label-lg');
   constructedCV.appendChild(createLegend);
 }
 
