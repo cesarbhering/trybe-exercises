@@ -55,29 +55,29 @@ function constructCV () { // Faz construção do CV.
   }
 }
 
-function checkDate(event) { // Verifica Integraidade da Data fornecida.
-  event.preventDefault();
-  let date = document.getElementById('userPositionInitialDate').value;
-  date = date.split('');
-  let days = parseInt(date.slice(0,2).join(''));
-  let month = parseInt(date.slice(3,5).join(''));
-  let year = parseInt(date.slice(6,10).join(''));
-  if (days < 1 || days > 31 || isNaN(days)) {
-    return alert('ERRO: Dia inválido');
-  } else if (date[2] !== "/") { 
-      return alert('ERRO: Barra depois de dias inválida');
-  } else if (month < 1 || month > 12 || isNaN(month)) {
-    return alert('ERRO: Mês inválido');
-  } else if (date[5] !== "/") {
-    return alert('ERRO: Barra depois de mes inválida');
-  }else if (year < 1960 || year > 2021 || isNaN(year)) {
-    return alert('ERRO: Ano inválido')
-  }
-  constructCV();
-}
+// function checkDate(event) { // Verifica Integraidade da Data fornecida.
+//   event.preventDefault();
+//   let date = document.getElementById('userPositionInitialDate').value;
+//   date = date.split('');
+//   let days = parseInt(date.slice(0,2).join(''));
+//   let month = parseInt(date.slice(3,5).join(''));
+//   let year = parseInt(date.slice(6,10).join(''));
+//   if (days < 1 || days > 31 || isNaN(days)) {
+//     return alert('ERRO: Dia inválido');
+//   } else if (date[2] !== "/") { 
+//       return alert('ERRO: Barra depois de dias inválida');
+//   } else if (month < 1 || month > 12 || isNaN(month)) {
+//     return alert('ERRO: Mês inválido');
+//   } else if (date[5] !== "/") {
+//     return alert('ERRO: Barra depois de mes inválida');
+//   }else if (year < 1960 || year > 2021 || isNaN(year)) {
+//     return alert('ERRO: Ano inválido')
+//   }
+//   constructCV();
+// }
 
 const btnSendData = document.getElementById('submitData');
-btnSendData.addEventListener('click', checkDate);
+btnSendData.addEventListener('click', constructCV);
 
 function clearData(event){ // Limpa o formulário e o CV criado. 
   event.preventDefault();
@@ -97,3 +97,14 @@ function clearData(event){ // Limpa o formulário e o CV criado.
 
 const btnClearData = document.getElementById('clearData');
 btnClearData.addEventListener('click', clearData);
+
+
+var picker = new Pikaday({ // Faz o pikaday funcionar. Aparece o calendario no local da data de inicio.
+  field: document.getElementById('datepicker'),
+  toString(date) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  },
+});
