@@ -1,62 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta charset="UTF-8" />
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Formulário do Candidato</title>
 </head>
-<body>
-  <form action="" method="GET" id='userInfo'>
+<body class="bg-light">
+  <form action="" method="GET" id='userInfo' class="container">
     <fieldset class="userPersonalInfo">
-      <legend>Dados Pessoais</legend>
-      <label for="userName">Nome Completo:</label>
-      <input type="text" placeholder="Digite seu nome" maxlength="40" name="personalnam e" id="userName" autofocus required>
-      <br>
-      <label for="userMail">E-mail:</label>
-      <input type="email" placeholder="Digite seu email" maxlength="50" name="personalmail" id="userMail" required>
-      <br>
-      <label for="userCPF">CPF:</label>
-      <input type="text" placeholder="Digite seu CPF" maxlength="11" name="personalCPF" id="userCPF" required>
-      <br>
-      <label for="userAddress">Endereço:</label>
-      <input type="text" placeholder="Digite seu endereço" maxlength="200" name="personalAddress" id="userAddress" required>
-      <br>
-      <label for="userCity">Cidade:</label>
-      <input type="text" placeholder="Digite sua cidade" maxlength="28" name="personalCity" id="userCity" required>
-      <label for="userState">Estado:</label>
-      <select name="personalState" id="userState">
-      </select>
-      <br>
-      <span>Tipo de Moradia:</span>
-      <label for="house">Casa
-        <input type="radio" name="userHousingType" value="Casa" id="house" required>
-      </label>
-      <label for="apartament">Apartamento
-        <input type="radio" name="userHousingType" value="Apartamento" id="apartament" required>
-      </label>
+      <div class="form-row">
+        <legend class="col-form-label-lg">Dados Pessoais</legend>
+        <div class="form-group col-md-2">
+          <label for="userName">Nome Completo:</label>
+          <input type="text" placeholder="Digite seu nome" maxlength="40" name="personalnam e" id="userName" class="form-control" autofocus required>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="userMail">E-mail:</label>
+          <input type="email" placeholder="Digite seu email" maxlength="50" name="personalmail" id="userMail" class="form-control" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="userCPF">CPF:</label>
+          <input type="text" placeholder="Digite seu CPF" maxlength="11" name="personalCPF" id="userCPF" class="form-control" required>
+        </div>  
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="userAddress">Endereço:</label>
+        <input type="text" placeholder="Digite seu endereço" maxlength="200" name="personalAddress" id="userAddress" class="form-control" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="userCity">Cidade:</label>
+        <input type="text" placeholder="Digite sua cidade" maxlength="28" name="personalCity" id="userCity" class="form-control" required>
+      </div>
+    </div>  
+    <div class="form-row">  
+      <div class="form-group">
+        <label for="userState">Estado:</label>
+        <select multiple name="personalState" id="userState" class="form-control"></select>
+      </div>
+    </div>
+    <span>Tipo de Moradia:</span>
+    <div class="form-row">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" name="userHousingType" value="Casa" id="house" class="custom-control-input form-control">
+        <label for="house" class="custom-control-label">Casa</label>
+      </div> 
+      <div class="custom-control custom-radio custom-control-inline"> 
+        <input type="radio" name="userHousingType" value="Apartamento" id="apartament" class="custom-control-input form-control">
+        <label for="apartament" class="custom-control-label">Apartamento</label>
+      </div>
+    </div>
     </fieldset>
     <fieldset class="userProfessionalInfo">
-      <legend>Dados Profissionais</legend>
-      <label for="userPosition">Cargo:</label>
-      <input type="text" maxlength="40" id='userPosition' required>
-      <br>
-      <label for="userPositionResume">Descrição do cargo:</label>
-      <input type="text" maxlength="500" id="userPositionResume" required>
-      <br>
-      <label for="userPositionInitialDate">Data de início:</label>
-      <input type="text" maxlength="10" id="userPositionInitialDate" required>
-      <br>
-      <label for="userCvResume">Resumo do currículo:</label>
-      <textarea maxlength="1000" id="userCvResume" required></textarea>
+      <div class="form-row">
+        <legend class="col-form-label-lg">Dados Profissionais</legend>
+        <div class="form-group col-md-2">
+          <label for="userPosition">Cargo:</label>
+          <input type="text" maxlength="40" id='userPosition' class="form-control" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="userPositionResume">Descrição do cargo:</label>
+          <input type="text" maxlength="500" id="userPositionResume" class="form-control" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="userPositionInitialDate">Data de início:</label>
+          <input type="text" maxlength="10" id="userPositionInitialDate" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="userCvResume">Resumo do currículo:</label>
+          <textarea maxlength="1000" id="userCvResume" class="form-control" required></textarea>
+        </div>  
+      </div>
+    </div>
     </fieldset> 
+    <br>
     <div class='btnSpace'>
-      <button type="submit" id="submitData">Enviar Dados</button>
-      <button type="reset" id="clearData">Limpar Campos</button>
+      <button id="submitData" class="btn btn-primary">Enviar Dados</button>
+      <button type="reset" id="clearData" class="btn btn-secondary">Limpar Campos</button>
     </div>
   </form>
-  <fieldset id='compiledCV'>
-    <legend>CV Renderizado</legend>
-  </fieldset>
+  <div class="container">
+    <fieldset id='compiledCV' class="form-control col-md-6">
+      <legend class="col-form-label-lg">CV Renderizado</legend>
+    </fieldset>
+  </div> 
+  <br>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <script src="script.js"></script>
 </html>

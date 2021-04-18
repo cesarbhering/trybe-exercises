@@ -75,6 +75,7 @@ function checkDate(event) { // Verifica Integraidade da Data fornecida.
   }
   constructCV();
 }
+
 const btnSendData = document.getElementById('submitData');
 btnSendData.addEventListener('click', checkDate);
 
