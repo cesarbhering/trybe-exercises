@@ -1,4 +1,23 @@
-new window.JustValidate('.js-form');
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 
 statesList = [
   { name: 'Acre', acronym: 'AC',},
@@ -42,9 +61,10 @@ function createStatesOptions() { //Cria a lista de estados.
 createStatesOptions();
 
 function constructCV (event) { // Faz construção do CV.
-  event.preventDefault();
+  //event.preventDefault();
   const userAnswers = document.getElementById('userInfo');
   const constructedCV = document.getElementById('compiledCV');
+
   for (let index = 0; index < userAnswers.length; index += 1) {
     if (userAnswers[index].type === 'radio' && !userAnswers[index].checked) {
       continue;
@@ -62,7 +82,7 @@ const btnSendData = document.getElementById('submitData');
 btnSendData.addEventListener('click', constructCV);
 
 function clearData(event){ // Limpa o formulário e o CV criado. 
-  event.preventDefault();
+  //event.preventDefault();
   const constructedCV = document.getElementById('compiledCV');
   const userAnswers = document.getElementById('userInfo');
   constructedCV.innerHTML = '';
@@ -80,7 +100,6 @@ function clearData(event){ // Limpa o formulário e o CV criado.
 
 const btnClearData = document.getElementById('clearData');
 btnClearData.addEventListener('click', clearData);
-
 
 var picker = new Pikaday({ // Faz o pikaday funcionar. Aparece o calendario no local da data de inicio.
   field: document.getElementById('datepicker'),

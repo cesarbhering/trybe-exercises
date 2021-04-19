@@ -6,32 +6,32 @@
   <meta charset="UTF-8" />
   <title>Formulário do Candidato</title>
 </head>
-<body class="bg-light">
-  <form action="" method="GET" id='userInfo' class="container js-form form">
+<body class="">
+  <form action="" method="GET" id='userInfo' class="container needs-validation" novalidate>
     <fieldset class="userPersonalInfo">
       <div class="form-row">
         <legend class="col-form-label-lg">Dados Pessoais</legend>
         <div class="form-group col-md-2">
           <label for="userName">Nome Completo:</label>
-          <input type="text" placeholder="Digite seu nome" name="personalnam e" id="userName" class="form-control" data-validate-field="name" autofocus required>
+          <input type="text" placeholder="Digite seu nome" name="personalnam e" id="userName" class="form-control" autofocus required>
         </div>
         <div class="form-group col-md-2">
           <label for="userMail">E-mail:</label>
-          <input type="email" placeholder="Digite seu email" name="personalmail" id="userMail" class="form-control" data-validate-field="email" required>
+          <input type="email" placeholder="Digite seu email" name="personalmail" id="userMail" class="form-control" required>
         </div>
         <div class="form-group col-md-2">
           <label for="userCPF">CPF:</label>
-          <input type="text" placeholder="Digite seu CPF" name="personalCPF" id="userCPF" class="form-control" maxlength="11" required>
+          <input type="text" placeholder="Digite seu CPF" name="personalCPF" id="userCPF" class="form-control" maxLength="11" required>
         </div>  
     </div>
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="userAddress">Endereço:</label>
-        <input type="text" placeholder="Digite seu endereço" name="personalAddress" id="userAddress" class="form-control" data-validate-field="text" required>
+        <input type="text" placeholder="Digite seu endereço" name="personalAddress" id="userAddress" class="form-control" required>
       </div>
       <div class="form-group col-md-3">
         <label for="userCity">Cidade:</label>
-        <input type="text" placeholder="Digite sua cidade" name="personalCity" id="userCity" class="form-control" data-validate-field="text" required>
+        <input type="text" placeholder="Digite sua cidade" name="personalCity" id="userCity" class="form-control" required>
       </div>
     </div>  
     <div class="form-row">  
@@ -40,14 +40,14 @@
         <select multiple name="personalState" id="userState" class="form-control"></select>
       </div>
     </div>
-    <span>Tipo de Moradia:</span>
     <div class="form-row">
-      <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" name="userHousingType" value="Casa" id="house" class="custom-control-input form-control" data-validate-field="radio">
+      <label class="form-label">Tipo de Moradia:</label>
+      <div class="custom-control custom-radio custom-control-inline form-check">
+        <input type="radio" name="flexRadioDefault" id="house" class="custom-control-input form-control">
         <label for="house" class="custom-control-label">Casa</label>
       </div> 
-      <div class="custom-control custom-radio custom-control-inline"> 
-        <input type="radio" name="userHousingType" value="Apartamento" id="apartament" class="custom-control-input form-control" data-validate-field="radio">
+      <div class="custom-control custom-radio custom-control-inline form-check"> 
+        <input type="radio" name="flexRadioDefault" value="Apartamento" id="apartament" class="custom-control-input form-control">
         <label for="apartament" class="custom-control-label">Apartamento</label>
       </div>
     </div>
@@ -57,11 +57,11 @@
         <legend class="col-form-label-lg">Dados Profissionais</legend>
         <div class="form-group col-md-2">
           <label for="userPosition">Cargo:</label>
-          <input type="text" maxlength="40" id='userPosition' class="form-control" data-validate-field="text" required>
+          <input type="text" maxlength="40" id='userPosition' class="form-control" required>
         </div>
         <div class="form-group col-md-2">
           <label for="userPositionResume">Descrição do cargo:</label>
-          <input type="text" maxlength="500" id="userPositionResume" class="form-control" data-validate-field="text" required>
+          <input type="text" maxlength="500" id="userPositionResume" class="form-control" required>
         </div>
         <div class="form-group col-md-2">
           <label for="datepicker">Data de início:</label>
@@ -78,14 +78,13 @@
     </fieldset> 
     <br>
     <div class='btnSpace'>
-      <button id="submitData" class="btn btn-primary">Enviar Dados</button>
+      <button type="submit" id="submitData" class="btn btn-primary">Enviar Dados</button>
       <button type="reset" id="clearData" class="btn btn-secondary">Limpar Campos</button>
     </div>
   </form>
-  <div class="container">
-    <fieldset id='compiledCV' class="form-control col-md-6">
-      <legend class="col-form-label-lg">CV Renderizado</legend>
-    </fieldset>
+  <br>
+  <div class="container bg-light border border-dark border-bottom-0" id="compiledCV">
+    <legend>CV Renderizado</legend>
   </div> 
   <br>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
