@@ -1,0 +1,43 @@
+body {
+  background-color: #ffe8d6;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  background-color: #ddbea9;
+  color: #6b705c;
+  border-style: dashed 40px black solid;
+  border-radius: 20px;
+  border-style: solid;
+}
+
+button {
+  background-color: #cb997e;
+  color: #6b705c;
+}
+
+.btnSpace {
+  text-align: center;
+}
+
+legend {
+  background-color: #ddbea9;
+  border-radius: 20px;
+  border-style: solid;
+}
+
+#compiledCV {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.infoInCV {
+  color: black;
+  text-align: center;
+}
