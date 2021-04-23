@@ -1,0 +1,41 @@
+body {
+  font-size: 1.1em;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 0.9em;
+
+}
+h2 {
+
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  padding: 20px;
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    background-color: antiquewhite;
+    font-size: 2em;
+    margin: 50px;
+  }
+
+ .catPictures {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color:azure;
+    font-size: 2.5em;
+    max-width: 1000px;
+  }
+}
