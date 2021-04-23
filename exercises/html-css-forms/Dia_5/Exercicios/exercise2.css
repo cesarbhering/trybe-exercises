@@ -1,0 +1,150 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media not all and (min-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header p {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  p {
+    padding: 10px;
+    font-size: 1.1em;
+  }
+
+  .aside-two {
+    display: none;
+  }
+
+  footer {
+    text-align: center;
+    background-color: rgb(187, 187, 187);
+  }
+}
+
+@media not all and (min-width: 1200px) {
+  body {
+    padding: 40px;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header p {
+    font-size: 2em;
+  }
+
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    padding-right: 50px;
+    font-size: 1.1em;
+  }
+
+  .lists {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .lists h2 {
+    text-align: center;
+  }
+
+  h1 {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  footer {
+    background-color: azure;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding: 50px;
+  }
+
+  header {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header p {
+    font-size: 3.5em;
+  }
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+    padding-bottom: 50px;
+  }
+
+  header nav ul li {
+    font-size: 2.5em;
+    padding: 10px 50px;
+  }
+
+  .lists {
+    display: flex;
+    justify-content: space-around;
+    border-style: dashed;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    font-weight:lighter;
+  }
+
+  .lists h2 {
+    text-align: center;
+  }
+  
+  .main-content h1 {
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .main-content p {
+    font-size: x-large;
+    padding-bottom: 20px;
+    line-height: 35px;
+  }
+
+  footer {
+    font-size: 2em;
+    text-align: center;
+    border-style: dashed;
+    border-radius: 10px;
+    background-color: antiquewhite;
+  }
+
+}
