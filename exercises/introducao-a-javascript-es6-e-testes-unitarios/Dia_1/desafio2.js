@@ -22,6 +22,6 @@ console.log(factorial(7))
 // Para fazer este exercício eu consultei:
 // https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
 
-const factorialTernary = (num) => num * factorialTernary(num - 1);
+const factorialTernary = (num) => num === 1 ? num : num * factorialTernary(num - 1); // Porque funciona com o === e com o  > 0 Nao ?
 
 console.log(factorialTernary(5));
