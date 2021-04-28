@@ -45,23 +45,24 @@ customerInfo(order);
 
 
 // Complete a função orderModifier() para que seu retorno seja similar a "Olá Luiz Silva, o total do seu pedido de muzzarella,  e Coca-Cola Zero é R$ 50,00."
+const muzzarella = { muzzarella: {amount: 1, price: 20} } // Perguntar no Plantao
+const calabresa = { calabresa: {amount: 1, price: 20} } // Perguntar no Plantao
 
-//Object.assign(order.order.pizza, muzzarellaPizza)
-const muzzarellaInfo = { 
-  amount: 1, price: 25
-}
-const muzzarella = { muzzarella: amount: 1, price: 25}
+const newPizzaOrder = (newPizza) => Object.assign(order.order.pizza, newPizza);
 
-const newPizzaOrder = () => Object.assign(order.order.pizza, PizzaInfo);
+const removePizzaOrder = (currentPizza) => delete order.order.pizza[currentPizza];
 
-newPizzaOrder();
-console.log(order.order.pizza)
+removePizzaOrder('margherita');
+removePizzaOrder('pepperoni');
+
+newPizzaOrder(muzzarella);
+newPizzaOrder(calabresa);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
   order['name'] = 'Luiz Silva';
   order['payment'] = 50;
-  console.log(`Olá ${order.name}, o total do seu pedido de muuzzarella, calabresa e Coca-Cola 0 é R$ ${order.payment}.`)
+  console.log(`Olá ${order.name}, o total do seu pedido de ${Object.keys(order.order.pizza)[0]}, ${Object.keys(order.order.pizza)[1]} e Coca-Cola 0 é R$ ${order.payment}.`)
 }
 
 orderModifier(order);
