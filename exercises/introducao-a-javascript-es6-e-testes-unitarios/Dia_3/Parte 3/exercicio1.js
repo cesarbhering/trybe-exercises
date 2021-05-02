@@ -15,3 +15,4 @@ const parameter = ['Irina', 'Ashleigh', 'Elsa'];
 const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
 
 assert.deepStrictEqual(greetPeople(parameter), result);
+assert.strictEqual(typeof greetPeople(parameter), typeof result);
