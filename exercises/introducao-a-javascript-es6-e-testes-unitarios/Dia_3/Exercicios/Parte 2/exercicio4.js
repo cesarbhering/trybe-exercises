@@ -1,7 +1,6 @@
 const assert = require('assert');
 // Escreva a função findTheNeedle para passar nos testes já implementados.
-// escreva a função findTheNeedle aqui
-
+// escreva a função findTheNeedle aqui.
 const findTheNeedle = (array, word) => array.indexOf(word);
 
 let words = ['house', 'train', 'slide', 'needle', 'book'];
@@ -18,3 +17,4 @@ words = ['plant', 'shelf', 'arrow', 'bird'];
 expected = -1;
 output = findTheNeedle(words, 'plat');
 assert.strictEqual(output, expected);
+
