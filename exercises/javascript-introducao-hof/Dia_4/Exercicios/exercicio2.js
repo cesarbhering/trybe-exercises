@@ -67,8 +67,8 @@ const books = [
 ];
 
 function allNames() {
-  // escreva seu código aqui                       POR INVERTENDO A ORDE4M DA COMPARACAO NAO FUNCIONA ? PORQUE SIMOBLO DE>< NAO FUNCIONAM ?
-  const authorsNames = books.reduce((acc, curr, index) => books.length -1 !== index  ? `${acc + curr.author.name}, ` : `${acc + curr.author.name}.`, []);
+  // escreva seu código aqui                                    
+  const authorsNames = books.reduce((acc, curr, index) => index < books.length -1  ? `${acc + curr.author.name}, ` : `${acc + curr.author.name}.`, []);
   return `Nomes: ${authorsNames}`;
 }
 
