@@ -75,6 +75,6 @@ const estudantes = [
   },
 ];
 
-const bestGrade = estudantes.map((estudante) => ({name: estudante.nome, materia: estudante.materias.reduce((acc,curr) => acc.nota > curr.nota ? acc : curr, 0).name}))
+const bestGrade = estudantes.map((estudante) => ({name: estudante.nome, materia: estudante.materias.reduce((acc,curr) => acc.nota > curr.nota ? acc : curr).name}));
 
 console.log(bestGrade);
