@@ -49,7 +49,7 @@ console.log(numerosPares); // [6, 8, 10, 12]
 
 //Do jeito que está, quando passamos person para a função nationality o retorno é João is undefined . Ajuste a função nationality para que a chamada nationality(person) retorne João is Brazilian .
 
-const getNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
+const getNationality = ({ firstName, nationality = 'Brazilian' }) => `${firstName} is ${nationality}`;
 
 const person = {
     firstName: 'João',
