@@ -41,4 +41,4 @@ const Exercicio2 = () => {
 
 Exercicio2()
 
-//window.onload = () => fetchJoke();
+window.onload = () => fetchJoke();
