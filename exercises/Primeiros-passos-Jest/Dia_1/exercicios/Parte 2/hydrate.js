@@ -1,14 +1,5 @@
-// Desafio 13
-function hydrate(string) {
-  // seu código aqui
-  let regex = /\d+/g; // \d+ = Pega os digitos com 1 caractere ou mais | /g = faz a "pesquisa" na string toda.
-  let stringDigits = string.match(regex);
-  let countTotal = 0;
-  for (let n of stringDigits) {
-    countTotal += parseInt(n, 10);
-  }
-  if (countTotal === 1) {
-    return '1 copo de água';
-  }
-  return `${countTotal} copos de água`;
+const hydrate = (string) => {
+  return string.match(/\d+/g) == 1 ? '1 copo de água' : `${string.match(/\d+/g).reduce((acc, curr) => acc + parseInt(curr),0)} copos de água`
 }
+
+module.exports = hydrate;
