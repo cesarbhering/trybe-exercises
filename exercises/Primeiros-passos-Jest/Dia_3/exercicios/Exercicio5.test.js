@@ -10,4 +10,4 @@ describe('Testes solicitados no exercício 5', () => {
     Exercicio5.upperString.mockRestore();
     expect(Exercicio5.upperString('cesar')).toBe('CESAR')
   });
-})
+});
