@@ -1,5 +1,5 @@
-const { upperString, firstLetter, concatString } = require('./Exercicio4');
-jest.mock('./Exercicio4')
+const { upperString, firstLetter, concatString } = require('./stringManipulation');
+jest.mock('./stringManipulation')
 
 describe('Teste Soolicitados no Exercicio 4', () => {
   test('Faça uma nova implementação para a primeira função, mas agora ela deve retornar a string em caixa baixa', () => {
