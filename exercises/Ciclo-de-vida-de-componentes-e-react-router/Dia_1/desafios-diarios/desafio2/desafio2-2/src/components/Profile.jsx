@@ -39,7 +39,7 @@ class Profile extends React.Component {
       <p>Foto: <img src={user.picture.medium} alt="My Profile"></img></p>
       <p>Nome: {user.name.first} {user.name.last} </p>
       <p>E-mail: {user.email}</p>
-      <p>Idade: {user.dob.age}</p> 
+      <p>Idade: {user.dob.age}</p>
     </div>
     )
   }
