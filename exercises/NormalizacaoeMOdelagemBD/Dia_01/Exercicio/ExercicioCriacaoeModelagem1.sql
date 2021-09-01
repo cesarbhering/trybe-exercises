@@ -1,0 +1,31 @@
+CREATE SCHEMA Zoologico;
+USE Zoologico;
+
+CREATE TABLE Animais(
+animalID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL,
+especie VARCHAR(50),
+sexo VARCHAR(1),
+idade INT,
+localizacao VARCHAR(30)
+);
+
+CREATE TABLE Gerentes(
+gerenteID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Cuidadores(
+cuidadorID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL,
+gerenteID INT(4) NOT NULL,
+FOREIGN KEY (gerenteID) REFERENCES Gerentes (gerenteID)
+);
+
+CREATE TABLE Escala_Cuidadores(
+escalaID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+cuidadorID INT(4) NOT NULL,
+animalID INT(4) NOT NULL,
+FOREIGN KEY (cuidadorID) REFERENCES Cuidadores (cuidadorID),
+FOREIGN KEY (animalID) REFERENCES Animais (animalID)
+);
