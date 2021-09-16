@@ -32,4 +32,23 @@ db.movies.updateOne({title: "Batman"},{
   $set: {description:
      "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."
     }});
-//Adicione o campo description no filme Godzilla com o seguinte valor: "The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity." .
+//Adicione o campo description no filme Godzilla com o seguinte valor: 
+//"The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity." .
+db.movies.updateOne({title: "Godzilla"},{$set: 
+  {description: "The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity."}});
+/*   Adicione o campo description no filme Home Alone com o seguinte valor: 
+  "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation." . */
+  db.movies.updateOne({title: "Home Alone"},{$set: {description: 
+    "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation."}});
+//Utilizando o operador $regex , retorne todos os filmes em que a descrição comece com a palavra "The" .
+db.movies.find({description: {$regex: /^The/}});
+//Utilizando o operador $regex , retorne todos os filmes em que a descrição termine com a palavra "humanity." .
+db.movies.find({description: { $regex: /humanity.$/}});
+//Crie um índice do tipo text no campo description .
+db.movies.createIndex({description: "text"});
+//Utilizando o operador $text , busque por filmes que contenham o termo "vacation" .
+db.movies.find({$text: {$search: "vacation"}});
+//Utilizando o operador $text , busque por filmes que contenham os termos "monstrous" ou "criminal" .
+db.movies.find({$text: {$search: "monstrous criminal"}});
+//Utilizando o operador $text , busque por filmes que contenham a frase "when he is accidentally" .
+db.movies.find({$text: {$search: "\"when he is accidentally\""}});
