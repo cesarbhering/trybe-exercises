@@ -14,16 +14,12 @@ async function writeString() {
     fs.writeFile(`file${index + 1}.txt`, e);
   });
 
-const fileNames = [
-  "file1.txt",
-  "file2.txt",
-  "file3.txt",
-  "file4.txt",
-  "file5.txt",
-];
+let fullString = ""
+for (let i = 1; i <=5; i++) {
+  let teste = await fs.readFile(`file${i}.txt`, "utf8");
+  fullString += " " + teste;
+}
 
-const getTexts = await Promise.all(fileNames.map((e) => fs.readFile(e, "utf8")));
-const fullString = getTexts.join(" ");
 await fs.writeFile("fileAll.txt", fullString);
 }
 
