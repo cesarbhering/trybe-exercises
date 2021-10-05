@@ -85,3 +85,8 @@ app.post('/simpsons', async (req, res) => {
   await fs.writeFile('simpsons.json', JSON.stringify(allChars));
   res.status(204).end();
 });
+
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
