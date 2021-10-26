@@ -22,12 +22,21 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + '/envios'));
 
-const upload = multer({ dest: 'uploads' });
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'envios/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "." + file.mimetype.split('/')[1]);
+  }
+})
 
-app.post('/files/upload', upload.single('file'), (req, res) =>
-  res.status(200).json({ body: req.body, file: req.file })
+const upload = multer({ storage });
+
+app.post('/envios', upload.single('file'), (req, res) =>
+  res.status(200).json({ body: req.body, file: req.file }) // Porque é gerado um arquivo quebrado ?
 );
 
 app.get('/ping', controllers.ping);
